@@ -1,0 +1,18 @@
+{% block body %}
+{% for x in item %}
+<h4>
+    <ul style="list-style-type:none;">
+        <li>
+            Project: {{x.project_name}}
+        </li>
+        <li>
+                Description: {{x.project_desc}}
+        </li>
+    </ul>
+
+</h4>
+    <div class="col-md-3 offset-md-2">
+        <img class="card" height="250px" src="{{ x.project_image  }}"/>
+    </div>
+{% endfor %}
+{% endblock %}

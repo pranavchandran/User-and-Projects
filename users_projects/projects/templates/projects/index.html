@@ -1,0 +1,46 @@
+{% extends 'projects/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    </head>
+<body>
+{% block body %}
+{% for item in project_list %}
+
+<div class="row">
+    <div class="col-md-3 offset-md-2">
+        <img class="card" height="150px" src="{{ item.project_image  }}"/>
+
+    </div>
+    <div class="col-md-4">
+        <h3>{{item.project_name}}</h3>
+        <h5>{{item.project_desc}}</h5>
+        <!-- <h6>${{item.item_price}}</h6> -->
+        <h7>Member&nbsp{{ item.user_name }}</h7>
+
+    </div>
+    <div class="col-md-2">
+        <a href="{% url 'projects:detail' item.id %}" class="btn btn-success">Details</a>
+
+    </div>
+</div>
+
+
+{% endfor %}
+{% endblock %}
+
+THis is the old COde
+<h1>Order your Foods</h1>
+
+    <ul>
+        <li>
+            <a href="">{{item.id}}--{{item.item_name}}</a>
+
+        </li>
+    </ul>
+
+</body>
+</html> 

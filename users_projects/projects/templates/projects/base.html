@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'projects/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Pranav</title>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">All New Projects</a>
+        <div class="navbar">
+            <a class="nav-item nav-link" href="{% url 'projects:create_item' %}">Add Item</a>
+            <a class="nav-item nav-link" href="#">Delete Item</a>
+            <a class="nav-item nav-link" href="{% url 'projects:view_item' %}">My Projects</a>
+            {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Logout</a>
+            <a href="{% url 'profile' %}">&nbsp;&nbsp;{{ user.username }}</a>
+            {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            {% endif %}
+
+        </div>
+    </nav>
+    {% if messages %}
+       {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+
+       {% endfor %}
+    {% endif %}
+
+
+{% block body%}
+{% endblock %}
+
+</body>
+</html>
