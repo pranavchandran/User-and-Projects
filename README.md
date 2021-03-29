@@ -4,5 +4,7 @@
 User Login,User have option to add his projects and see all other user projects.
 
 ##User have to look his projects in Myprojects  
-Show- which user is Logged in
+Show- which user is Logged in  
+
+##User have option to add his photo in his profile page.
 
