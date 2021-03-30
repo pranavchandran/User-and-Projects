@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+{% extends 'projects/base.html' %}
 
-    <title>Profile</title>
-</head>
-<body>
-<h1>{{ user.username }}</h1>
+{% block body%}
+
+
+<h3>{{user.username}}</h3>
 <img src="{{ user.profile.Image.url }}">
-{% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-{{ message.tags }}">
-                {{ message }}
-        </div>
-        {% endfor %}
-{% endif %}
-</body>
-</html>
+
+{% endblock %}
+
+
+
+
+

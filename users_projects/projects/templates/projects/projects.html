@@ -1,3 +1,4 @@
+{% extends 'projects/base.html' %}
 {% block body %}
 {% for x in item %}
 <h4>
@@ -9,10 +10,11 @@
                 Description: {{x.project_desc}}
         </li>
     </ul>
-
 </h4>
     <div class="col-md-3 offset-md-2">
         <img class="card" height="250px" src="{{ x.project_image  }}"/>
     </div>
+    {% empty %}
+    <h3>Sorry, You have no New Projects.</h3>
 {% endfor %}
 {% endblock %}
